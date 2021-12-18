@@ -1,28 +1,21 @@
-import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
-import RouteNavigation from './src/config/navigation'
+import React from "react";
+import { StyleSheet, Text, View } from "react-native";
+import RouteNavigation from "./src/config/navigation";
+import ContextProvider from "./src/context/context";
 
-const App = () => {
+export default function App() {
   return (
-    <RouteNavigation />
-    
-  )
+    <ContextProvider>
+      <RouteNavigation />
+    </ContextProvider>
+  );
 }
 
-export default App
-
-const styles = StyleSheet.create({})
-
-
-
+const styles = StyleSheet.create({});
 
 // import { StatusBar } from 'expo-status-bar';
 // import React from 'react';
 // import { StyleSheet, Text, View, FlatList,Image,Button  } from 'react-native';
-
-
-
-
 
 // const studentList = [
 //   {
@@ -67,22 +60,16 @@ const styles = StyleSheet.create({})
 // rollnumber:12345,
 
 // },
-  
+
 // ]
 
-
-
-
-
 // export default function App() {
-
 
 //   // const [studentList , setStudentList ] = useState([
 //   //   {id:'asdsadfffg',name:'ammar',rollnumber:12345},
 //   //   {id:'zxcvcxvcx',name:'asad',rollnumber:5353},
 //   //   {id:'qweertret',name:'ali',rollnumber:21158}
 //   // ]);
-  
 
 // // const renderItem = ({item})=>{
 // //   <View style={styles.container}>
@@ -92,7 +79,6 @@ const styles = StyleSheet.create({})
 // //   </View>
 
 // // }
-
 
 //   return (
 //  <FlatList
@@ -118,13 +104,13 @@ const styles = StyleSheet.create({})
 //     <View style={{marginTop:20,flex:1,flexDirection:'row'}}>
 //     <Button
 //     style={styles.button}
-    
+
 //     title='order'/>
 //     {/* <Button
-    
+
 //     title='order'/>
 //     <Button
-    
+
 //     title='order'/> */}
 //     </View>
 //   </View>
@@ -132,9 +118,9 @@ const styles = StyleSheet.create({})
 // }}
 // //  keyExtractor={item => item.id}
 
-// /> 
+// />
 
-//       // <SignUp /> 
+//       // <SignUp />
 //       //  <StatusBar style="auto" />
 //   );
 // }
@@ -165,5 +151,5 @@ const styles = StyleSheet.create({})
 //     width:'90px',
 //     height:'90px'
 //   }
-  
+
 // });

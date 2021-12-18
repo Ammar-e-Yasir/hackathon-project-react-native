@@ -14,14 +14,14 @@ export function reducer(state, action) {
 
        
 
-        case "REGISTER_USER": {
-            let usersClone = state.users.slice(0);
-            usersClone.push(action.payload);
-            return {
-                ...state,
-                users: usersClone
-            }
-        }
+        // case "REGISTER_USER": {
+        //     let usersClone = state.users.slice(0);
+        //     usersClone.push(action.payload);
+        //     return {
+        //         ...state,
+        //         users: usersClone
+        //     }
+        // }
         default:
             return state;
 
