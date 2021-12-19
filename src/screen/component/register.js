@@ -4,7 +4,7 @@ import {
   Text,
   TouchableOpacity,
   StyleSheet,
-  
+  Image,
   TextInput,
   SafeAreaView,
 } from "react-native";
@@ -35,20 +35,20 @@ export default function Register({ navigation }) {
     catch (err) {
         console.log(err)
        
-        // switch (err.message) {
-        //     case 'Firebase: Error (auth/invalid-email).':
-        //         setErrMsg('Invalid Email !');
-        //         break;
+        switch (err.message) {
+            case 'Firebase: Error (auth/invalid-email).':
+                setErrMsg('Invalid Email !');
+                break;
 
-        //     case 'Firebase: Password should be at least 6 characters (auth/weak-password).':
-        //         setErrMsg('password should be at least 6 characters');
-        //         break;
+            case 'Firebase: Password should be at least 6 characters (auth/weak-password).':
+                setErrMsg('password should be at least 6 characters');
+                break;
 
-        //     case 'Firebase: Error (auth/email-already-in-use).':
-        //         setErrMsg('Email already in use !');
-        //         break;
-        // }
-        // setTimeout(() => { setErrMsg('') }, 2000)
+            case 'Firebase: Error (auth/email-already-in-use).':
+                setErrMsg('Email already in use !');
+                break;
+        }
+        setTimeout(() => { setErrMsg('') }, 2000)
     }
 
 
@@ -60,12 +60,12 @@ export default function Register({ navigation }) {
       behavior="padding"
     >
       <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-        {/* <Image source={require('./images/logo.png')}  style={{height:100,width:205}}/> */}
+        <Image source={require('../images/logo.png')}  style={{height:100,width:205,marginTop:130}}/>
         <Text style={{ fontSize: 40, color: "#333", fontWeight: "bold" }}>
-          Signup !
+          User Register
         </Text>
 
-        <Text style={{backgroundColor:'pink',color:'red'}}>{errMsg}</Text>
+        <Text style={{backgroundColor:'pink',color:'red',marginTop:10}}>{errMsg}</Text>
         <TextInput
           style={styles.input}
           placeholder="Name"
